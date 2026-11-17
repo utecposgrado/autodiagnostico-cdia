@@ -8,7 +8,7 @@ import nodemailer from "npm:nodemailer@6";
 
 const REMITENTE = "admisionposgrado@utec.edu.pe";
 const REMITENTE_NOMBRE = "Admisión UTEC Posgrado";
-const CON_COPIA = ["cramirezso@utec.edu.pe", "mcastillom@utec.edu.pe"];
+const CON_COPIA_OCULTA = ["cramirezso@utec.edu.pe", "mcastillom@utec.edu.pe"];
 const ASUNTO = "Resultado de tu autodiagnóstico de programación — Maestría en Ciencia de Datos e IA";
 
 const sb = createClient(
@@ -136,7 +136,7 @@ Deno.serve(async (req: Request) => {
     await transporter.sendMail({
       from: { name: REMITENTE_NOMBRE, address: REMITENTE },
       to: r.email,
-      cc: CON_COPIA,
+      bcc: CON_COPIA_OCULTA, // CCO: el postulante no ve estas direcciones
       subject: ASUNTO,
       text,
       html,

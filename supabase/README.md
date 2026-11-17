@@ -39,7 +39,7 @@ update privado.clave set datos = '{"parte1":[...20 índices...],"reto1":{"r1a":0
 
 Cada fila nueva de `public.resultados` dispara (trigger `resultados_despachar_correo`, vía
 `pg_net`) la Edge Function `enviar-diagnostico`, que envía el resultado al postulante desde
-`admisionposgrado@utec.edu.pe` con copia a la coordinación. Remitente, copias y texto están
+`admisionposgrado@utec.edu.pe` con copia oculta (CCO) a la coordinación. Remitente, copias y texto están
 al inicio de `functions/enviar-diagnostico/index.ts`.
 
 - Secretos de la función (Supabase → Edge Functions → Secrets): `SMTP_USER` (el buzón) y
