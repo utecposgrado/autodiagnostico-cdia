@@ -1,6 +1,11 @@
 # Backend (Supabase)
 
-Proyecto: `utec-evaluacion-diagnostica` (`blgcpoqhrjuvllmgwhhx`, región sa-east-1).
+Proyecto: `autodiagnostico-cdia` (`lrmfnscvelrezchwymad`, región sa-east-1), organización
+`utecposgrado`. El sitio se publica con GitHub Pages desde la rama `main`:
+https://utecposgrado.github.io/autodiagnostico-cdia/
+
+El esquema completo está en `migrations/` (`supabase db push --remote`). La clave de
+respuestas se carga aparte (ver "Cambiar la clave de respuestas").
 
 - `public.enviar_evaluacion(p jsonb)` — la llama el formulario (`index.html`). Califica en el
   servidor, guarda en `public.resultados` y devuelve el puntaje por sección.

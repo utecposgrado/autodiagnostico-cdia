@@ -24,7 +24,7 @@ begin
   -- Nunca debe impedir que se registre el envío del postulante.
   begin
     perform net.http_post(
-      url := 'https://blgcpoqhrjuvllmgwhhx.supabase.co/functions/v1/enviar-diagnostico',
+      url := 'https://lrmfnscvelrezchwymad.supabase.co/functions/v1/enviar-diagnostico',
       body := jsonb_build_object('id', new.id, 'token', new.correo_token),
       headers := '{"Content-Type": "application/json"}'::jsonb,
       timeout_milliseconds := 30000
